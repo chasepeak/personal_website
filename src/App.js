@@ -1,5 +1,3 @@
-import './App.css';
-
 import React from "react";
 
 import { Layout, Menu } from 'antd';
@@ -37,7 +35,7 @@ function home() {
   return (
     <div>
       <h2>Welcome to my website!</h2>
-      <h3>This website is currently in the early stages of development. Content is currently available on the <b>Resume</b> page.</h3>
+      <h3>This website is currently in the  <i>VERY</i> early stages of development. Content is available on the <b>Resume</b> page.</h3>
     </div>
   );
 }
@@ -56,7 +54,8 @@ function App() {
   const { Header, Content, Footer, Sider } = Layout;
   const { SubMenu } = Menu;
 
-  const [page, setPage] = React.useState("Home")
+  const defaultPage = "Home";
+  const [page, setPage] = React.useState(defaultPage)
   return (
     <Layout hasSider>
     <Sider
@@ -73,7 +72,7 @@ function App() {
       <Menu
         theme="dark"
         mode="inline"
-        defaultSelectedKeys={['1']}
+        defaultSelectedKeys={[defaultPage]}
         style={{fontSize: 20}}
         onSelect={
           (item) => {setPage(item.key)}
