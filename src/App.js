@@ -2,7 +2,6 @@ import React from "react";
 
 import { Layout, Menu } from 'antd';
 import {
-  UploadOutlined,
   HomeOutlined,
   CodeOutlined,
   FileOutlined,
@@ -11,6 +10,7 @@ import {
 } from '@ant-design/icons';
 
 import myResume from "./assets/peakchasem_resume.pdf";
+import awsSALogo from "./assets/solutions-architect-associate-tag_360x32.png";
 
 import "antd/dist/antd.css";
 
@@ -25,18 +25,18 @@ function renderPage(page) {
   }
 }
 
-function resume() {
-  return (
-    <iframe title="myResume" src={myResume} style={{width:"100%", height: "100vh"}}></iframe>
-  );
-}
-
 function home() {
   return (
     <div>
       <h2>Welcome to my website!</h2>
       <h3>This website is currently in the  <i>VERY</i> early stages of development. Content is available on the <b>Resume</b> page.</h3>
     </div>
+  );
+}
+
+function resume() {
+  return (
+    <iframe title="myResume" src={myResume} style={{width:"100%", height: "100vh"}}></iframe>
   );
 }
 
@@ -84,11 +84,9 @@ function App() {
         <Menu.Item key="Resume" icon={<FileOutlined />}>
           Resume
         </Menu.Item>
-        <SubMenu key="menu3" icon={<CodeOutlined />} title="Code Samples">
-          <Menu.Item key="Code 1" icon={<UploadOutlined />}>
-            Code 1
-          </Menu.Item>
-        </SubMenu>
+        <Menu.Item key="Code-Samples" icon={<CodeOutlined />}>
+          Code Samples
+        </Menu.Item>
         <Menu.Item key="Lifestyle" icon={<HeartOutlined />}>
           Lifestyle
         </Menu.Item>
@@ -102,8 +100,11 @@ function App() {
         </div>
       </Content>
       <Footer style={{ textAlign: 'center' }}>
-        <b>Created by <a href="mailto:chasempeak@gmail.com">Chase M. Peak</a></b>
-        <br/>
+        <h3>
+          <b>Created by <a href="mailto:chasempeak@gmail.com">Chase M. Peak</a></b>
+          <br/>
+          <img src={awsSALogo} style={{height: 26, width: 294}}></img>
+        </h3>
         <h4>Last updated on Jan 15th, 2022</h4>
       </Footer>
     </Layout>
